@@ -1,0 +1,9 @@
+$script = <<-SCRIPT
+sudo apt-get update
+sudo apt-get upgrade --yes
+SCRIPT
+Vagrant.configure(2) do |config|
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.synced_folder ".", "/home/vagrant/publishing-service"
+    config.vm.provision "shell", inline: $script
+end

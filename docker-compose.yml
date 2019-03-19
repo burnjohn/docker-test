@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    image: docker-test
+    build: .
+    ports:
+      - "80:8080"
+    environment:
+      - PRODUCTION=develop
+      - COMPOSE_PROJECT_NAME=docker-test
+
