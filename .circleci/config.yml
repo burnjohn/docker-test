@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    macos:
+    docker:
+      - image: burnjohn/docker-test
+    steps:
+      - checkout # check out the code in the project directory
+      - run:
+          # run tests in app
+          name: Run tests
+          command: echo "Tests suite is running..."
+      - run:
+          # build our application
+          name: Build Application
+          command: docker-compose up -d
